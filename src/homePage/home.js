@@ -10,7 +10,7 @@ function Home() {
   const getSearchResults = async (event) => {
     if (event.keyCode === 13) {
       const searchValue = inputRef.current.value;
-      const response = await fetch('http://localhost:5000/getEmployees?query='+searchValue);
+      const response = await fetch('https://es-api-demo-a801ccce37e3.herokuapp.com/getEmployees?query='+searchValue);
       const data = await response.json();
       navigate('/searchResults', { state: { results: data } });
     }
